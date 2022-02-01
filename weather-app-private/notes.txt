@@ -1,0 +1,36 @@
+//TODO
+- index page
+    - index model
+    - index view
+    - index controller
+        - index post (for when you submit location information)
+            - sanitize/validate and then redirect to weather page        
+
+- autoload
+- dependencies
+    - composer.json (php unit)
+    - dependency injection (maybe required?)
+    - 
+
+- about page
+    - mvc
+
+
+- contact page
+    - mvc
+
+- weather page 
+    - mvc
+    - controller
+        - get (weather data shown and parsed)
+
+- utilities
+    - weather parser
+        - parses raw weather information from API into thing to be manipulated by view
+
+- improve Router.php
+    - parameters in get
+    - subroutes (/login/route2)
+
+- view 
+    - send args to view to be implemented
