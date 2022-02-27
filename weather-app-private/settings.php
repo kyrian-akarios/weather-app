@@ -1,6 +1,6 @@
 <?php
 /**ini settings */
-
+/**general_settings */
 return [
     'db_credentials'=>[
         'db_user'=>'',

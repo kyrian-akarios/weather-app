@@ -43,7 +43,6 @@ class WeatherModel{
         $this->request_wrapper->setMethod("GET");
         $this->request_wrapper->setParameters($parameters);
         $result = $this->request_wrapper->sendRequest();
-        //if result not error
         return $this->parseWeatherData($result);
         //else return error
     }

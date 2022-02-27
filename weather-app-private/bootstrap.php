@@ -6,7 +6,9 @@ $css_file = "styles.css";
 */
 
 define("APP_PATH", __DIR__ . "/app/");
-define("CSS_PATH", "/weather-app-public/styles/" . $css_file);
+define("PUBLIC_PATH", dirname($_SERVER["SCRIPT_NAME"]));
+define("CSS_PATH", PUBLIC_PATH  . "/css/" . $css_file);
+define("SCRIPT_PATH", PUBLIC_PATH . "/scripts/" );
 define ("WEB_PATH", "/weather-app-public/");
 
 /**
@@ -24,6 +26,7 @@ spl_autoload_register("Autoloader::ValidatorLoader");
 /**
  * logger
  */
+ini_set('error_reporting', E_ALL & ~E_WARNING);
 
 /**
  * Use declarations

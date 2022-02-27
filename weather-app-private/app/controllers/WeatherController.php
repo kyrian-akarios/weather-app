@@ -7,7 +7,9 @@ class WeatherController extends Controller{
             $model->setSettings($settings);
             $model->setRequestWrapper(new WebRequestWrapper());
             $model->setParser(new WeatherParser());
-            if($_POST["lat"] && $_POST["long"]){
+            if(WeatherValidator::validateLatitude($_POST["lat"])
+            && WeatherValidator::validateLongitude($_POST["long"])
+            ){
                 $model->setLongitude($_POST["long"]);
                 $model->setLatitude($_POST["lat"]);
             }
@@ -15,12 +17,26 @@ class WeatherController extends Controller{
                 $model->setQuery($_POST["query"]);
             }
             else{
-                //error
+                $view = new IndexView();
+                $view->setErrors(["No information submitted."]);
+                Logger::log(LogType::ERROR, "No information submitted.");
+                echo $view->createView();
+                return 0;
             }
             $result = $model->getWeatherForecast();
-            $view = new WeatherView();
-            $view->content(args: $result);
-            echo $view->createView();
+            if($result["error"]){
+                $view = new WeatherView();
+                $view->setErrors([$result["error"]["message"]]);
+                Logger::log(LogType::ERROR, "Error with getting results.");
+                echo $view->createView();
+            }
+            else{
+                $view = new WeatherView();
+                $view->setArgs($result);
+                Logger::log(LogType::SUCCESS, "Results gained successfully.");
+                echo $view->createView();
+
+            }
   
         }
 }

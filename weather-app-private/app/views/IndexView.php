@@ -15,23 +15,26 @@ class IndexView extends View{
         }
         return <<< CONTENT
         <div class="index-page content">
+            <div class="wrapper">
+            <p class="heading">Weather App </p>
             <div class="index-form">
             <div class="form-errors">
             {$error_output}
             </div>
             <form action="./weather" "geolocation_manual" method="post">
-                <div class="form-element">
-                    <input type="text" name="query">
-                    <button type="submit">Submit</button>
+                <div class="form-element" id="text-geolocation">
+                    <input type="text" placeholder="Enter a city, postcode, or town..."name="query">
+                    <button type="submit"><i class="fa fa-search"></i></button>
                 </div>
             </form>
             <form action="./weather" method="post" name="geolocation_auto">
                 <input type="hidden" name="lat" value = "">
                 <input type="hidden" name="long" value = "">
                 <div class="form-element">
-                    <input type="submit">Use my Location <i class="fa fa-2x location"></i></button>
+                    <button type="submit">Use my Location <i class="fa fa-map-marker-alt"></i></button>
                 </div>
             </form>
+            </div>
             </div>
         </div>
         CONTENT;

@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
+
+body::before{
+    content:'';
+    height:100%;
+    position: absolute;
+    background-position: cover;
+    background-size: cover;
+    transform: scale(1.1);
+    margin:auto;
+    filter:blur(8px);
+    z-index:-5;
+
+}
+body{
+    margin: 0;
+    background-image: url(../assets/download.jpg);
+    z-index:5;
+    scroll-behavior: none;
+    overflow-x: hidden;
+    
+
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+
+header{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top:.5em;
+    padding-right: max(2em, 5%);
+    padding-bottom: .5em;
+    padding-left: max(2em, 5%);
+    background-color: rgba(255,255,255,0.15);
+    font-family: 'Julius Sans One';
+
+    
+
+}
+.header-links a{
+    text-decoration: none;
+    color:rgb(43, 40, 40);
+    font-weight:-200;
+    margin-right:1em;
+  
+
+}
+.header-links a:not(:last-of-type){
+    border-right:1px solid rgb(43,40,40);
+    padding-right:1em;
+}
+
+/** heading**/
+.heading{
+    font-family:'Julius Sans One';
+    font-weight:1000;
+    font-size:2em;
+    border-bottom: 1px solid black;
+    width:100%;
+    text-align: center;
+}
+/**  page**/
+.content{
+    min-height:100vh;
+    max-height: auto;
+}
+.wrapper{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:1em;
+    align-items: center;
+    width:min(50vw);
+    margin:5em auto 5em auto;
+    z-index:5;
+    box-shadow: 0px 10px 15px 10px rgba(0 ,0 ,0 ,0.15);
+    background-color: rgba(255,255,255,0.5);
+    border-radius:10px;
+    animation: fadeIn 1s;
+}
+
+
+.page-content{
+    height:100%;
+    width:100%;
+}
+.page-content p{
+    font-family:'Antic Slab';
+    color:black;
+}
+#text-geolocation{
+    flex-direction: row;
+}
+.index-form{
+    width:100%;
+}
+form{
+    width:100%;
+}
+.form-element{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top:1.5em;
+}
+.form-element input{
+    width:100%;
+}
+.form-element button{
+    background-color: black;
+    color:white;
+    border:none;
+    padding:1em;
+    border:1px solid transparent;
+}
+.form-element button:hover{
+    border:1px solid black;
+    background-color:transparent;
+    color:black;
+    cursor:pointer;
+
+}
+
+/**footer**/
+footer{
+    width:100%;
+    background-color: rgba(255,255,255,0.15);
+    color:black;
+    padding:.5em;
+    text-align: center;
+    font-family: 'Julius Sans One';
+
+
+}
+
+/**weather-page**/
+.weather-cards{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.weather-cards > *{
+    flex:2 1 30%;
+}
+
+
+.location.heading{
+    margin-bottom:1em;
+
+}
+
+
+.weather-table{
+    font-family: 'Bitter';
+    margin-right:1em;
+    width:30%;
+}
+
+.weather-table td{
+    text-align: center;
+    background: white;
+}
+.weather-table th{
+    background-color: black;
+    color:white;
+}
+.weather-table tr td i{
+    padding:.5em;
+
+}
+.expand-hour{
+    padding:0;
+
+}
+.expand-hour td{
+    background: black;
+    color:white;
+    transition: background-color, color 500ms;
+}
+.expand-hour td:hover{
+    background-color: white;
+    color:black;
+    cursor: pointer;
+    
+}
+.table-condition td:last-of-type{
+    height:3em;
+}
+.heading-row td{
+    background-color: black;
+    color:white;
+}
+.temperature-row td{
+    text-align: center;
+    width:5em;
+}
+.weather-table .weather-temperature td:not(:last-of-type){
+    border-right:1px solid black;
+}
+.hourly-outputs{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    margin-top:1em;
+
+}
+.hour-output{
+    display:flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    animation:fadeIn .5s;
+
+    
+}
+.weather-hour{
+    margin-right:.1em;
+    font-family: 'Bitter';
+}
+.weather-hour td{
+    background: white;
+    color:black;
+    padding:.5em;
+}
+.weather-hour tr{
+    text-align: center;
+}
+.weather-hour .wind_dir td:first-of-type{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.dark td{
+    background-color:rgb(6, 6, 68);
+    color:palegoldenrod;
+
+}
+.light td{
+    background-color:skyblue;
+    color:gold;
+}
+
+.hour-output:first-of-type{
+    display: none;
+}
+.hour-output:last-of-type{
+    display: none;
+}
+
+@media screen and (max-width:500px){
+    .wrapper{
+        width:100%;
+    }
+    header{
+        flex-direction: column;
+    }
+    .form-element input{
+        width:100%;
+    }
+}
+
+/**error**/
+.errors{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    width:100%;
+}
+.errors > *{
+    height:2rem;
+    padding:.5em;
+
+}
+.errors i{
+    color:black;
+    color:red;
+    background-color: rgb(156, 21, 21);
+    color:white;
+
+}
+.errors p{
+    background-color: rgb(189, 141, 141);
+    color:darkred;
+    width:100%;
+    font-style:bold;
+    font-family:'Bitter';
+
+}
+/**info**/
+.info{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    width:100%;
+}
+.info > *{
+    height:2rem;
+    padding:.5em;
+
+}
+.info i{
+    background-color:darkblue;
+    color:white;
+
+}
+.info p{
+    background-color: rgb(133, 151, 228);
+    color:darkblue;
+    width:100%;
+    font-style:bold;
+    font-family:'Bitter';
+
+}
+/**contact**/
+.contact-form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Bitter';
+    font-size:1.2em;
+}
+.contact-form .form-element input{
+    padding:.5em;
+    margin-top:0;
+}
+
+.contact-form .form-element textarea{
+    width:100%;
+    height:200px;
+    font-family:'Arial';
+    padding:.2em;
+}
+@keyframes fadeIn {
+    0%{
+        opacity:0;
+        transform:translateY(-50px);
+    }    
+    100%{
+        opacity:1;
+        top:0px;
+        transform: translateY(0px);
+        
+    }
+}

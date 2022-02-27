@@ -9,7 +9,7 @@ class Autoloader{
         include APP_PATH . "\models\\" . $model . ".php";
     }
     public static function ValidatorLoader($validator){
-        include APP_PATH . "\validators\\" . $validator . ".php";
+        include APP_PATH . "\\validators\\" . $validator . ".php";
     }
     public static function ViewLoader($view){
         include APP_PATH . "\\views\\" . $view . ".php";

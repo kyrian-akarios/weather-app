@@ -24,7 +24,8 @@ class Router{
             echo $this->routes[$route]->execute();
         }
         else{
-            echo new Error404View();
+            $view = new Error404View();
+            echo $view->createView();
         }
     }
    

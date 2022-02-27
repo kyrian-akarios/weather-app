@@ -34,3 +34,10 @@
 
 - view 
     - send args to view to be implemented
+
+
+TODO::
+-> left to do is to add:
+    -> testing
+    -> add log stuff
+    

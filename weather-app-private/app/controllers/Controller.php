@@ -3,7 +3,8 @@
 abstract class Controller{
     public function __construct(){}
     public function get(){
-        return new Error404View();
+        $view = new Error404View();
+        echo $view->createView();
     }
     public function post(){
         return new Error404View();

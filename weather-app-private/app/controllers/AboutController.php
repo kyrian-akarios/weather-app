@@ -1,6 +1,9 @@
 <?php
 class AboutController extends Controller {
     public function get(){
-        return new AboutView();
+        $view = new AboutView();
+        Logger::log(LogType::INFORMATION, "About page accessed");
+
+        echo $view->createView();
     }
 }
