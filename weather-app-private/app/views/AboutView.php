@@ -1,5 +1,8 @@
 <?php
-include APP_PATH . "/views/View.php";
+/**
+ * @class - AboutView
+ * Shows the about page
+ */
 class AboutView extends View{
 
     public function content($errors = null, $args = null){

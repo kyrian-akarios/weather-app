@@ -1,8 +1,10 @@
 <?php
 include APP_PATH . "/views/View.php";
+/**
+ * @class - IndexView
+ * Shows the index page
+ */
 class IndexView extends View{
-    //heredoc allows string interpolation
-    //array value => {$row[$number]}
     public function content($errors = null, $args = null){
         if($errors){
             $error_output = <<< ERRORS

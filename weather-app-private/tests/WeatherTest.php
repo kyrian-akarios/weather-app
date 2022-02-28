@@ -6,18 +6,18 @@ class WeatherTest extends TestCase{
     public function testWeatherModelLatLong(){
         $model = new WeatherModel();
         $model->setMethod("GET");
-        $model->setLongitude(-50);
-        $model->setLatitude(95);
+        $model->setLongitude(-0.11);
+        $model->setLatitude(51.52);
         $result = $model->getWeatherForecast();
-        $this->assertNotEqualTo();
+        $fake_result = ["lon"=>"-0.11", "lat"=>"51.52"];
+        $this->assertTrue($result['location']['lat'] == $fake_result['lat'] && $result['location']['lon'] == $fake_result['lon']);
     }
     public function testWeatherModelQuery(){
         $model = new WeatherModel();
-        $model->setQuery("leicester");
+        $model->setQuery("London");
         $model->setMethod("GET");
         $result = $model->getWeatherForecast();
-        $file = fopen("weatherQuery.json");
-        $this->assertEqual($result, fread(filesize($file)));
-        fclose();
+        $fake_result = ["name"=>"London"];
+        $this->assertTrue($result['location']['name'] == $fake_result['name'])
     }
 }

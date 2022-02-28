@@ -1,6 +1,8 @@
 <?php
-//sends web reqs to other servers
-//curl wrapper
+/**
+ * @class - WebRequestWrapper
+ * @desc - sends web request via CURL
+ */
 class WebRequestWrapper{
     private string $request_url;
     private array $parameters;

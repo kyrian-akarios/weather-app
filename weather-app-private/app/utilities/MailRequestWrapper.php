@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * @class - MailRequestWrapper
+ * @desc - sends mail via SMTP settings in php.ini and send_mail.ini
+ */
 class MailRequestWrapper{
     private $to;
     private $from;

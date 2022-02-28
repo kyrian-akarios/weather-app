@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * @class - WeatherView
+ * Shows the weather page
+ */
 class WeatherView extends View{
     public function parseDate($data){
         str_split("-");
@@ -52,18 +55,20 @@ class WeatherView extends View{
                     $day_output .= "<td>" . $day["day"]["condition"]["text"] ."</td>";
                   
                     }
-                
+                $date = strtotime($day["date"]);
+                $datetime = new DateTime();
+                $datetime->setTimestamp($date);
                 $content_output .= <<< CONTENT_OUTPUT
                     <table class='weather-table'>
                     <tr colspan=2>
-                        <th colspan=2>Tomorrow</th>
+                        <th colspan=2>{$datetime->format('D')}</th>
                     </tr>
                     <tr>
                         <td>
                             <i class='fa fa-clock'></i> 
                         </td>
                         <td>
-                            <p>{$day["date"]}</p>                        
+                            <p>{$datetime->format('d/m/Y')}</p>                        
                         </td>
                     </tr>
 

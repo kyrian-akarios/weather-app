@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * @class - WeatherParser
+ * @desc - decodes JSON response of weather API
+ */
 class WeatherParser{
     private $data;
     public function __construct(){}

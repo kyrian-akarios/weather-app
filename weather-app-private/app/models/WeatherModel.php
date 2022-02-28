@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * @class - WeatherModel
+ * the model for the weather page
+ * Used to send a request to an external API and get back results
+ */
 class WeatherModel{
     
     private $request_wrapper;
@@ -28,6 +32,10 @@ class WeatherModel{
     public function setRequestWrapper($wrapper){
         $this->request_wrapper = $wrapper;
     }
+    /**
+     * @method - getWeatherForecast
+     * @desc - gets the Weather Forecast by taking in other parameters and sending a web request
+     */
     public function getWeatherForecast(){
         $this->key = $this->settings['web_services']['api-keys']['weather'];
         $parameters=array(

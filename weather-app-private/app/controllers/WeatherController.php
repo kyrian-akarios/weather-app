@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * @class WeatherController
+ * invokes weather route
+ */
 class WeatherController extends Controller{
         public function post(){
             $settings = require('C:\xampp\php\includes\weather-app\settings.php');

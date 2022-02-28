@@ -1,4 +1,8 @@
 <?php
+/**
+ * @class - Contact Controller
+ * Contact controller for sending mail and instantiating ContactView
+ */
 class ContactController extends Controller{
     public function get(){
         $view =  new ContactView();

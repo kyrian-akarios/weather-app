@@ -1,6 +1,12 @@
 <?php
+/**
+ * @class - MessageBuilder
+ * @desc - builds message using current datetime, type, and message 
+ */
 class MessageBuilder{
     private string $message;
+    private DateTime $datetime;
+    private string $type;
     public function setType($type){
         switch($type){
             case LogType::WARNING:
@@ -24,7 +30,7 @@ class MessageBuilder{
         if(!$this->datetime){
             $datetime = datetime();
         }
-        return "{$this->type} - {$this->message} at {$this->datetime}";
+        return "{$this->type} - {$this->message} at {$this->datetime->format('d/m/Y H:i:s')}\n\n";
     }
 
 }

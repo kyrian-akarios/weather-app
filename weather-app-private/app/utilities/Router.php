@@ -1,4 +1,8 @@
 <?php
+/**
+ * @class - Router
+ * @desc - maps URLs to routes
+ */
 class Router{
     private array $routes;
     public function __construct(){}
@@ -13,11 +17,7 @@ class Router{
         return "/" . $split_url[2];
         //create array from url?
     }
-    public function cleanArgs($args){
-        //should get first part of the url
-        //and put the rest into an array
-
-    }
+  
     public function run($url){
         $route = $this->parseURL($url);
         if(array_key_exists($route, $this->routes)){

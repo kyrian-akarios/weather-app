@@ -1,5 +1,9 @@
 <?php
 include APP_PATH . "/views/View.php";
+/**
+ * @class - ContactView
+ * Shows the contact page
+ */
 class ContactView extends View{
 
     public function content($errors = null, $args = null){

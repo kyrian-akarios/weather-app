@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * @class - ContactFormValidator
+ * @desc - validates Contact Form fields
+ */
 class ContactFormValidator{
     public static function validateName($name){
         $pattern = "/[A-z]/";

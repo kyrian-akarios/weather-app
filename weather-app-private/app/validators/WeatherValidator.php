@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * @class - WeatherValidator
+ * @desc - validates WeatherModel fields
+ */
 class WeatherValidator{
     public static function validateQuery($location){
         if($location != null){
