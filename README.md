@@ -35,7 +35,7 @@ return [
 In php.ini:
 ```
 SMTP= #credentials here
-port= #credentials here
+smtp_port= #credentials here
 sendmail_from=#credentials here
 sendmail_path= #credentials here
 ```
