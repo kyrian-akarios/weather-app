@@ -9,7 +9,7 @@ Rename ```weather-app-private``` to ```weather-app-public```.
 
 Move ```weather-app-public``` into your htdocs folder (or equivalent).
 
-##Initial Run
+## Initial Run
 Run the following commands:
 ```
 composer update
